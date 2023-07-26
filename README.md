@@ -14,6 +14,9 @@ pip install -r requirements.txt
 
 You also need to install wkhtmltopdf which is an open source tool that pdfkit uses under the hood:
 
-For Ubuntu/Debian: sudo apt-get install wkhtmltopdf
+For Ubuntu/Debian: 
+```bash
+sudo apt-get install wkhtmltopdf
+```
+For Windows and other systems, download a packaged installer at wkhtmltopdf's downloads page: https://wkhtmltopdf.org/downloads.html, add the folder with wkhtmltopdf binary to your system's PATH.
 
-For Windows and other systems, download a packaged installer at wkhtmltopdf's downloads page: https://wkhtmltopdf.org/downloads.html
