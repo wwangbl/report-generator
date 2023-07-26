@@ -10,7 +10,7 @@ This application is designed to generate clinical reports in PDF format. The rep
 
 ```bash
 pip install -r requirements.txt
-
+```
 
 You also need to install wkhtmltopdf which is an open source tool that pdfkit uses under the hood:
 
