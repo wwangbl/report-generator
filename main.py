@@ -10,7 +10,7 @@ def create_pdf(data, template_path="templates/report.html", output="report.pdf")
     rendered_html = template.render(data=data)
 
     # Create the pdf
-    pdfkit.from_string(rendered_html, output)
+    pdfkit.from_string(rendered_html, output, options={'enable-local-file-access': None})
 
 # Data from your .csv, .json, .txt, etc.
 data = {

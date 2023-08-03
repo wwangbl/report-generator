@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Report</title>
-    <!-- Add more head elements here (like CSS) -->
-</head>
+    <head>
+        <style>
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch;
+                border-bottom: 2px solid black;
+                padding-bottom: 20px;
+                font-family: Arial, sans-serif;
+            }
+            .logo {
+                width: 100px;
+            }
+            .company-info {
+                text-align: center;
+                margin: auto 0;  /* add this */
+            }
+            .website-email {
+                text-align: right;
+                margin: auto 0;  /* add this */
+            }
+            .main-body {
+                margin-top: 50px;
+            }
+            h1 {
+                text-align: center;
+            }
+        </style>
+    </head>
 <body>
-    <h1>Welcome {{ data.name }}</h1>
-    <p>You are {{ data.age }} years old.</p>
-    <!-- Add more HTML here -->
+    <div class="header">
+        <img src="E:/report-generator/src/img/logo.png" class="logo" alt="Company Logo">
+        <div class="company-info">
+            <p>QuantumLife Limited</p>
+            <p>Unit 20, 22/F, New Tech Plaza, 34 Tai Yau Street, Hong Kong.</p>
+            <p>TEL: +852 2813 0770 FAX: +852 2813 0397</p>
+        </div>
+        <div class="website-email">
+            <p>www.quantumlife.com</p>
+            <p>info@quantumlife.hk</p>
+        </div>
+    </div>
+    <div class="main-body">
+        <h1>This is a sample report</h1>
+        <h1>Welcome {{ data.name }}</h1>
+        <p>You are {{ data.age }} years old.</p>
+    </div>
 </body>
 </html>
