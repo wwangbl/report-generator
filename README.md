@@ -20,3 +20,7 @@ sudo apt-get install wkhtmltopdf
 ```
 For Windows and other systems, download a packaged installer at wkhtmltopdf's downloads page: https://wkhtmltopdf.org/downloads.html, add the folder with wkhtmltopdf binary to your system's PATH.
 
+Usage:
+```bash
+python main.py
+```
