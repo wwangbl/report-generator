@@ -1,0 +1,60 @@
+/* .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+.logo {
+    width: 100px;
+}
+.company-info {
+    text-align: center;
+    margin: auto 0;  
+}
+.website-email {
+    text-align: right;
+    margin: auto 0; 
+}
+.main-body {
+    margin-top: 50px;
+}
+h1 {
+    text-align: center;
+} */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.left-part, .right-part {
+    flex-basis: 50%;
+    height: 100%;
+}
+
+.left-part img, .left-part p {
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+
+.right-part {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.block {
+    flex-basis: calc(50% - 10px);  /* Adjust the percentage or subtracted pixel value as needed */
+    margin: 5px;  /* Half of subtracted pixel value above */
+    height: 12.5%;  /* 100% divided by the number of blocks */
+}
+
+.label {
+    font-weight: bold;
+    color: darkblue;
+}

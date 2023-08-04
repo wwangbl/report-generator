@@ -1,45 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            .header {
-                display: flex;
-                justify-content: space-between;
-                align-items: stretch;
-                border-bottom: 2px solid black;
-                padding-bottom: 20px;
-                font-family: Arial, sans-serif;
-            }
-            .logo {
-                width: 100px;
-            }
-            .company-info {
-                text-align: center;
-                margin: auto 0;  /* add this */
-            }
-            .website-email {
-                text-align: right;
-                margin: auto 0;  /* add this */
-            }
-            .main-body {
-                margin-top: 50px;
-            }
-            h1 {
-                text-align: center;
-            }
-        </style>
-    </head>
+<head>
+    <style>
+        .header {
+            width: 100%;
+            overflow: auto; /* Clearfix for the floats */
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 30px;
+            color: darkblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .left-part, .right-part {
+            float: left;
+            width: 50%;
+        }
+
+        .left-part img, .left-part p {
+            display: block;
+            width: 100%;
+            height: 50%;
+        }
+
+        .block {
+            float: left;
+            width: 25%;  /* Adjust the percentage as needed */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .label {
+            font-weight: bold;
+            color: darkblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
 <body>
     <div class="header">
-        <img src="E:/report-generator/src/img/logo.png" class="logo" alt="Company Logo">
-        <div class="company-info">
-            <p>QuantumLife Limited</p>
-            <p>Unit 20, 22/F, New Tech Plaza, 34 Tai Yau Street, Hong Kong.</p>
-            <p>TEL: +852 2813 0770 FAX: +852 2813 0397</p>
+        <div class="left-part">
+            <img src="E:/report-generator/src/img/logo.png" class="logo" alt="Company Logo">
+            <div class="title">Genomic Clinical Report</div>
         </div>
-        <div class="website-email">
-            <p>www.quantumlife.com</p>
-            <p>info@quantumlife.hk</p>
+        <div class="right-part">
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
+            <div class="block">
+                <div class="label">Name</div>
+                <div class="content">wwl</div>
+            </div>
         </div>
     </div>
     <div class="main-body">
