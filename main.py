@@ -24,11 +24,22 @@ df = pd.read_csv('data/table.csv')
 # Convert the DataFrame into a list of dictionaries
 table_data = df.to_dict('records')
 
+# Ask for user input, with default values
+name = input("Enter name: ") or "John Doe"
+id = input("Enter ID: ") or "A123456"
+gender = input("Enter gender: ") or "Male"
+age = input("Enter age: ") or 25
+dob = input("Enter date-of-birth: ") or "01/11/1990"
+logo_path = "templates/test.png"
+
 # Data from your .csv, .json, .txt, etc.
 data = {
-    "name": "John Doe",
-    "age": 25,
-    "logo_path": os.path.abspath("templates/test.png"),
+    "name": name,
+    "age": age,
+    "id": id,
+    "gender": gender,
+    "dob": dob,
+    "logo_path": os.path.abspath(logo_path),
     "table": table_data
 }
 

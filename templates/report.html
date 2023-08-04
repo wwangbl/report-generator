@@ -86,27 +86,26 @@
         <div class="right-part">
             <div class="block">
                 <div class="label">PATIENT NAME</div>
-                <div class="content">Wenliang Wang</div>
+                <div class="content">{{ data.name }}</div>
             </div>
             <div class="block">
                 <div class="label">ID</div>
-                <div class="content">A1234567</div>
+                <div class="content">{{ data.id }}</div>
             </div>
             <div class="block">
-                <div class="label">SEX</div>
-                <div class="content">Male</div>
+                <div class="label">GENDER</div>
+                <div class="content">{{ data.gender }}</div>
             </div>
             <div class="block">
                 <div class="label">DATE OF BIRTH</div>
-                <div class="content">25/05/1999</div>
+                <div class="content">{{ data.dob }}</div>
             </div>
         </div>
     </div>
     <div class="main-body">
-        <h1>This is a sample report</h1>
         <h1>Welcome {{ data.name }}</h1>
-        <p>You are {{ data.age }} years old.</p>
-
+        <h1>This is a sample report</h1>
+        
         <table>
             <!-- Headers -->
             <tr>
