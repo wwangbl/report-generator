@@ -40,20 +40,26 @@ table_drug_summary = tb_drug_summary.to_dict('records')
 # dob = input("Enter date-of-birth: ") or "01/11/1990"
 
 name = "John Doe"
-id = "A123456"
 gender = "Male"
-age = 25
 dob = "01/11/1990"
+sample_type = "Whole Blood"
+id = "A123456"
+collection_date = "01/01/2023"
+accession = "4316546"
+report_date = "07/08/2023"
 
 logo_path = "templates/test.png"
 
 # Data from your .csv, .json, .txt, etc.
 data = {
     "name": name,
-    "age": age,
     "id": id,
     "gender": gender,
     "dob": dob,
+    "sample_type": sample_type,
+    "collection_date": collection_date,
+    "accession": accession,
+    "report_date": report_date,
     "logo_path": os.path.abspath(logo_path),
     "table": table_data,
     "table_summary": table_summary,
