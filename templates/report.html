@@ -19,10 +19,10 @@
         }
 
         .company {
-            font-weight: 200;
-            font-size: 30px;
+            font-weight: 100;
+            font-size: 25px;
             color: rgb(0, 38, 91);
-            font-family: Georgia, serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .left-part, .right-part {
@@ -82,14 +82,32 @@
         tr td:first-child {
             font-weight: bold;
         }
+
+        h1 {
+            font-weight: bold;
+            color: rgb(0, 38, 91);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: rgb(0, 38, 91);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3 {
+            font-weight: bold;
+            color: rgb(0, 38, 91);
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="left-part">
             <img src="{{ data.logo_path }}" class="logo" alt="Company Logo">
-            <div class="title">Genomic Clinical Report</div>
-            <div class="company">QuantumLife Ink</div>
+            <div class="title">QuantumLife WGS Report</div>
+            <div class="company">Genetic Risk Carriers Screening and Analysis</div>
         </div>
         <div class="right-part">
             <div class="block">
@@ -108,11 +126,202 @@
                 <div class="label">DATE OF BIRTH</div>
                 <div class="content">{{ data.dob }}</div>
             </div>
+            <!-- <div class="block">
+                <div class="label">SAMPLE TYPE</div>
+                <div class="content">{{ data.gender }}</div>
+            </div>
+            <div class="block">
+                <div class="label">SAMPLE COLLECTION DATE</div>
+                <div class="content">{{ data.gender }}</div>
+            </div>
+            <div class="block">
+                <div class="label">SAMPLE ID</div>
+                <div class="content">{{ data.gender }}</div>
+            </div>
+            <div class="block">
+                <div class="label">ACCESSION #</div>
+                <div class="content">{{ data.gender }}</div>
+            </div>
+            <div class="block">
+                <div class="label">REPORT DATE</div>
+                <div class="content">{{ data.gender }}</div>
+            </div>
+            <div class="block">
+                <div class="label">CONTACT PHONE NUMBER</div>
+                <div class="content">{{ data.gender }}</div>
+            </div> -->
         </div>
     </div>
     <div class="main-body">
-        <h1>Welcome {{ data.name }}</h1>
-        <h1>This is a sample report</h1>
+        <h1>Overview</h1>
+        <p>
+            At QuantumLife Inc, we specialize in Genetic Risk Carriers Screening and Analysis. Our mission is to provide comprehensive, 
+            personalized genomic information that can help you understand your genetic predisposition to various hereditary diseases. 
+            To do this, we use Whole Genome Sequencing (WGS), a cutting-edge technology that reads each of the roughly three billion base 
+            pairs of an individual's DNA sequence. WGS offers an in-depth view of the entire genome, allowing us to detect genetic variants 
+            that may influence disease risk. By understanding these risks, you're empowered to make informed decisions about your health, 
+            lifestyle, and preventive care. Our services are designed to provide clarity and guidance in the complex world of genomics, 
+            bridging the gap between genetic information and actionable health insights.
+        </p>
+
+        <h1>Section 1: Finding Summary</h1>
+        <p>
+            This is a brief summary of the WGS screening and analysis.
+        </p>
+        <table>
+            <tr>
+                {% for header in data.table_summary[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_summary %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h1>Section 2: Hereditary Disease Risk</h1>
+        <p>
+            This section includes variants that, when found by themselves, are associated with high and moderate genetic risk
+            of developing a disease. Depending on a variant zygosity and disease inheritance, the disease can affect you or
+            represent a risk for the next generation (carrier variants).
+        </p>
+
+        <h2>Subsection 2.1: Variant Summary</h2>
+        <table>
+            <tr>
+                {% for header in data.table_variants[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_variants %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value.replace(' ', '<br>') }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Subsection 2.2: Variant Details</h2>
+        <h3>Variants Associated with Hereditary Cancer</h3>
+        <p>Patient was found to have a pathogenic variant associated with an increased risk for Hereditary Cancer</p>
+        <table>
+            <tr>
+                {% for header in data.table_variant_details[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_variant_details %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            The c.1564_1565delGA frameshift variant is predicted to truncate the ATM protein, resulting in a loss or
+            deficient function. The variant has been identified in a homozygous or compound heterozygous state in
+            individuals affected with ataxia-telangiectasia (PMID 9463314, PMID 10817650, PMID 9000145, PMID
+            12497634, PMID 21965147), as well as in an individual diagnosed with breast cancer (PMID 27083775).
+            The ATM gene codes for an enzyme called serine-protein kinase. This enzyme plays a key role in DNA damage
+            response by transducing checkpoint signaling, cell cycle regulation, and tumor suppression. Pathogenic ATM
+            variants result in impaired response to DNA damage, cell death, and formation of cancerous tumors and are
+            associated with autosomal dominant susceptibility to breast cancer (MIM 114480) and autosomal recessive
+            ataxia-telangiectasia (AT, MIM 208900). Women with a pathogenic ATM variant have a 5-to 9-fold increased
+            risk of breast cancer (PMID 1961222, PMID 15928302). There is also some evidence supporting an association
+            with autosomal dominant pancreatic, colorectal, prostate, and possibly other cancers (PMID 26483394, PMID
+            15928302, PMID 26662178). Ataxia-telangiectasia a childhood-onset disease characterized by progressive
+            cerebellar ataxia, neurologic degeneration, conjunctival telangiectasias, immunodeficiency and increased risk of
+            leukemia and lymphoma as well as other cancers (PMID 20301790). The worldwide prevalence of ataxiatelangiectasia 
+            is unknown, however, the estimated prevalence in the US ranges from 1 in 40,000 to 1 in 100,000
+            live births (PMID 20301790).
+        </p>
+
+        <h3>Variants Associated with Endocrine Disorder</h3>
+        <p>Patient is a carrier for a pathogenic variant associated with a Endocrine Disorder. Reproductive partner and/or first-degree
+            relatives may benefit from screening
+        </p>
+        <table>
+            <tr>
+                {% for header in data.table_variant_details[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_variant_details %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            The c.1564_1565delGA frameshift variant is predicted to truncate the ATM protein, resulting in a loss or
+            deficient function. The variant has been identified in a homozygous or compound heterozygous state in
+            individuals affected with ataxia-telangiectasia (PMID 9463314, PMID 10817650, PMID 9000145, PMID
+            12497634, PMID 21965147), as well as in an individual diagnosed with breast cancer (PMID 27083775).
+            The ATM gene codes for an enzyme called serine-protein kinase. This enzyme plays a key role in DNA damage
+            response by transducing checkpoint signaling, cell cycle regulation, and tumor suppression. Pathogenic ATM
+            variants result in impaired response to DNA damage, cell death, and formation of cancerous tumors and are
+            associated with autosomal dominant susceptibility to breast cancer (MIM 114480) and autosomal recessive
+            ataxia-telangiectasia (AT, MIM 208900). Women with a pathogenic ATM variant have a 5-to 9-fold increased
+            risk of breast cancer (PMID 1961222, PMID 15928302). There is also some evidence supporting an association
+            with autosomal dominant pancreatic, colorectal, prostate, and possibly other cancers (PMID 26483394, PMID
+            15928302, PMID 26662178). Ataxia-telangiectasia a childhood-onset disease characterized by progressive
+            cerebellar ataxia, neurologic degeneration, conjunctival telangiectasias, immunodeficiency and increased risk of
+            leukemia and lymphoma as well as other cancers (PMID 20301790). The worldwide prevalence of ataxiatelangiectasia 
+            is unknown, however, the estimated prevalence in the US ranges from 1 in 40,000 to 1 in 100,000
+            live births (PMID 20301790).
+        </p>
+
+        <h1>Section 3: Pharmacogenomic Findings</h1>
+        <table>
+            <tr>
+                {% for header in data.table_drug_summary[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_drug_summary %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            The way you respond to therapeutic drugs depends on your genes as well as other factors. This analysis found all 
+            your genetic alterations (genotypes) that may have a impact on how your body processing or metabolizing drugs (phenotypes). 
+            It helps your doctor better understand your personal situation, and your doctor will take these factors into account when 
+            deciding which drug or what drug dose is the best for you. Do not stop taking or alter the dosage of any prescribed 
+            medications without consulting with your doctor beforehand. 
+        </p>
+
+        <h2>Subsection 3.1: Drugs Potentially Impacted</h2>
+        <table>
+            <!-- Headers -->
+            <tr>
+                {% for header in data.table[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+
+            <!-- Data -->
+            {% for row in data.table %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Subsection 3.2: Gene and Phenotype Findings</h2>
         
         <table>
             <!-- Headers -->
