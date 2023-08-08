@@ -40,18 +40,28 @@
             float: left;
             width: 50%;  /* Adjust the percentage as needed */
             font-family: Arial, Helvetica, sans-serif;
-            background-color: lightgray;
+            background-color: white;
         }
 
         .label {
             font-weight: bold;
-            color: white;
-            background-color: rgb(0, 38, 91);
+            color: black;
+            background-color: lightgray;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
             font-family: Georgia, serif;
+        }
+
+        .overview-section {
+            font-size: large;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .summary-section {
+            padding-bottom: 50px;
         }
 
         table {
@@ -145,44 +155,60 @@
         </div>
     </div>
     <div class="main-body">
-        <h1>Overview</h1>
-        <p>
-            At QuantumLife Inc, we specialize in Genetic Risk Carriers Screening and Analysis. Our mission is to provide comprehensive, 
-            personalized genomic information that can help you understand your genetic predisposition to various hereditary diseases. 
-            To do this, we use Whole Genome Sequencing (WGS), a cutting-edge technology that reads each of the roughly three billion base 
-            pairs of an individual's DNA sequence. WGS offers an in-depth view of the entire genome, allowing us to detect genetic variants 
-            that may influence disease risk. By understanding these risks, you're empowered to make informed decisions about your health, 
-            lifestyle, and preventive care. Our services are designed to provide clarity and guidance in the complex world of genomics, 
-            bridging the gap between genetic information and actionable health insights.
-        </p>
-
-        <h1>Section 1: Finding Summary</h1>
-        <p>
-            This is a brief summary of the WGS screening and analysis.
-        </p>
-        <table>
-            <tr>
-                {% for header in data.table_summary[0].keys() %}
-                <th>{{ header }}</th>
+        <div class="overview-section">
+            <h1>Overview</h1>
+            <p>
+                Your genetic blueprint, steeped in your DNA, is the most critical factor in determining who you are. From the beginning 
+                of life to your golden years, it is these unique genetic variants that set you apart from your relatives and acquaintances. 
+                As you navigate through the later stages of life, an interplay of these inherent genetic traits, your lifestyle choices, 
+                and environmental factors, collectively contribute to the pace at which you age. This complex interaction also influences 
+                your susceptibility to various age-related health conditions and consequently how long you live.      
+            </p>
+            <p>
+                Here at QuantumLife Inc, our expertise lies in conducting comprehensive Genetic Risk Carriers Screening and Analysis. 
+                Our principal objective is to deliver personalized genomic data that can illuminate your genetic predisposition towards 
+                hereditary health conditions and diseases and provide insights into your potential physical fitness. 
+            </p>
+            <p>
+                In our pursuit of this mission, we employ Whole Genome Sequencing (WGS)—a state-of-the-art technology that deciphers an 
+                individual's DNA sequence, comprising approximately three billion base pairs. WGS grants us a panoramic view of the entire 
+                genome, enabling the detection of genetic variants that could potentially influence your health and disease susceptibility. 
+            </p>
+            <p>
+                Armed with this knowledge, you gain the power to make well-informed decisions concerning your health, lifestyle, 
+                and preventive care. Our services aim to demystify the intricate realm of genomics, forging a clear path from raw genetic 
+                information to actionable health insights. At QuantumLife Inc, we are your trusted partner in navigating the complex life 
+                journey from genetic understanding to your life goal Healthy Aging and Longevity.
+            </p>
+        </div>
+        <div class="summary-section">
+            <h1>Finding Summary</h1>
+            <p>
+                This is a brief summary of the WGS screening and analysis.
+            </p>
+            <table>
+                <tr>
+                    {% for header in data.table_summary[0].keys() %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in data.table_summary %}
+                <tr>
+                    {% for _, value in row.items() %}
+                    <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
                 {% endfor %}
-            </tr>
-            {% for row in data.table_summary %}
-            <tr>
-                {% for _, value in row.items() %}
-                <td>{{ value }}</td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-
-        <h1>Section 2: Hereditary Disease Risk</h1>
+            </table>
+        </div>
+        <h1>Section 1: Hereditary Disease Risk</h1>
         <p>
             This section includes variants that, when found by themselves, are associated with high and moderate genetic risk
             of developing a disease. Depending on a variant zygosity and disease inheritance, the disease can affect you or
             represent a risk for the next generation (carrier variants).
         </p>
 
-        <h2>Subsection 2.1: Variant Summary</h2>
+        <h2>Subsection 1.1: Variant Summary</h2>
         <table>
             <tr>
                 {% for header in data.table_variants[0].keys() %}
@@ -198,7 +224,7 @@
             {% endfor %}
         </table>
 
-        <h2>Subsection 2.2: Variant Details</h2>
+        <h2>Subsection 1.2: Variant Details</h2>
         <h3>Variants Associated with Hereditary Cancer</h3>
         <p>Patient was found to have a pathogenic variant associated with an increased risk for Hereditary Cancer</p>
         <table>
@@ -271,7 +297,7 @@
             live births (PMID 20301790).
         </p>
 
-        <h1>Section 3: Pharmacogenomic Findings</h1>
+        <h1>Section 2: Pharmacogenomic Findings</h1>
         <table>
             <tr>
                 {% for header in data.table_drug_summary[0].keys() %}
@@ -294,7 +320,7 @@
             medications without consulting with your doctor beforehand. 
         </p>
 
-        <h2>Subsection 3.1: Drugs Potentially Impacted</h2>
+        <h2>Subsection 2.1: Drugs Potentially Impacted</h2>
         <table>
             <!-- Headers -->
             <tr>
@@ -313,7 +339,7 @@
             {% endfor %}
         </table>
 
-        <h2>Subsection 3.2: Gene and Phenotype Findings</h2>
+        <h2>Subsection 2.2: Gene and Phenotype Findings</h2>
         
         <table>
             <!-- Headers -->
