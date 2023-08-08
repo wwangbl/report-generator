@@ -13,7 +13,7 @@ def create_pdf(data, template_path="report.html", output="report.pdf"):
     rendered_html = template.render(data=data)
 
     # Create the pdf
-    pdfkit.from_string(rendered_html, output, options={'enable-local-file-access': ''})
+    pdfkit.from_string(rendered_html, output, options={'enable-local-file-access': None})
 
     # Open the pdf
     webbrowser.open_new_tab(output)
@@ -48,7 +48,7 @@ collection_date = "01/01/2023"
 accession = "4316546"
 report_date = "07/08/2023"
 
-logo_path = "templates/test.png"
+logo_path = os.path.abspath("src/img/logo.png")
 
 # Data from your .csv, .json, .txt, etc.
 data = {
@@ -60,7 +60,7 @@ data = {
     "collection_date": collection_date,
     "accession": accession,
     "report_date": report_date,
-    "logo_path": os.path.abspath(logo_path),
+    "logo_path": "file:///" + logo_path.replace("\\", "/"),
     "table": table_data,
     "table_summary": table_summary,
     "table_variants": table_variants,
