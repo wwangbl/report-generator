@@ -19,18 +19,20 @@ def create_pdf(data, template_path="report.html", output="report.pdf"):
     webbrowser.open_new_tab(output)
 
 # Read the CSV data
-df = pd.read_csv('data/table.csv')
 tb_summary = pd.read_csv('data/summary.csv')
 tb_variants = pd.read_csv('data/variants.csv')
 tb_variant_details = pd.read_csv('data/variant_details.csv')
 tb_drug_summary = pd.read_csv('data/drug_summary.csv')
+tb_drug = pd.read_csv('data/drug.csv')
+tb_recommendation = pd.read_csv('data/recommendation.csv')
 
 # Convert the DataFrame into a list of dictionaries
-table_data = df.to_dict('records')
 table_summary = tb_summary.to_dict('records')
 table_variants = tb_variants.to_dict('records')
 table_variant_details = tb_variant_details.to_dict('records')
 table_drug_summary = tb_drug_summary.to_dict('records')
+table_drug = tb_drug.to_dict('records')
+table_recommendation = tb_recommendation.to_dict('records')
 
 # Ask for user input, with default values
 # name = input("Enter name: ") or "John Doe"
@@ -61,11 +63,12 @@ data = {
     "accession": accession,
     "report_date": report_date,
     "logo_path": "file:///" + logo_path.replace("\\", "/"),
-    "table": table_data,
     "table_summary": table_summary,
     "table_variants": table_variants,
     "table_variant_details": table_variant_details,
     "table_drug_summary": table_drug_summary,
+    "table_drug": table_drug,
+    "table_recommendation": table_recommendation,
 }
 
 create_pdf(data)

@@ -1,0 +1,13 @@
+﻿Gene,Genotype,Phenotype,Drugs
+CYP2B6,*9/*9,Poor Metabolizer,Efavirenz
+CYP2C19,*38/*38,Normal Metabolizer,"Abrocitinib, Brivaracetam, Citalopram, Clobazam, Clopidogrel, Flibanserin, Pantoprazole, Mavacamten, Voriconazole, Carisoprodol, Dexlansoprazole, Diazepam, Doxepin, Escitalopram, Esomeprazole, Lansoprazole, Omeprazole, Rabeprazole"
+CYP2C9,*3/*3,Poor Metabolizer,"Celecoxib, Dronabinol, Erdafitinib, Flurbiprofen, Meloxicam, Nateglinide, Piroxicam, Siponimod, Warfarin, Avatrombopag, Ibuprofen"
+CYP2D6,*1/*1,Normal Metabolizer,"Amphetamine, Aripiprazole, Aripiprazole Lauroxil, Atomoxetine, Brexpiprazole, Clozapine, Codeine, Deutetrabenazine, Eliglustat, Gefitinib, Iloperidone, Lofexidine, Meclizine, Metoclopramide, Oliceridine, Pimozide, Pitolisant, Propafenone, Tetrabenazine, Thioridazine, Tramadol, Valbenazine, Venlafaxine, Vortioxetine, Carvedilol, Cevimeline, Codeine, Perphenazine, Tolterodine, Tramadol, Amitriptyline, Amoxapine, Clomipramine, Darifenacin, Desipramine, Donepezil, Doxepin, Fesoterodine, Fluvoxamine, Galantamine, Imipramine, Metoprolol, Mirabegron, Nebivolol, Nortriptyline, Paroxetine, Propranolol, Protriptyline, Risperidone, Tamoxifen, Tamsulosin, Trimipramine, Viloxazine"
+CYP3A5,*3/*3,Poor Metabolizer,Tacrolimus
+CYP4F2,*1/*4,V433M variant carriers,Warfarin
+DPYD,c.1627A>G (*5)/c.1627A>G (*5),Normal Function,"Capecitabine, Fluorouracil"
+NUDT15,*1/*1,Normal Metabolizer,"Azathioprine, Mercaptopurine, Thioguanine"
+SLCO1B1,*37/*37,Normal Function,"Simvastatin, Atorvastatin, Elagolix, Rosuvastatin"
+TPMT,*1/*1,Normal Metabolizer,"Azathioprine, Mercaptopurine, Thioguanine"
+UGT1A1,*1/*6,Intermediate Metabolizer,"Belinostat, Irinotecan, Sacituzumab Govitecan-hziy, Nilotinib, Pazopanib, Dolutegravir, Raltegravir"
+VKORC1,rs9923231 variant (T)/rs9923231 variant (T),1639G>A variant carriers,Warfarin

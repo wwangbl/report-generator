@@ -20,7 +20,7 @@
 
         .company {
             font-weight: 100;
-            font-size: 25px;
+            font-size: 30px;
             color: rgb(0, 38, 91);
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -28,12 +28,12 @@
         .left-part, .right-part {
             float: left;
             width: 50%;
-            height: 180px;
+            height: 250px;
         }
 
         .left-part img {
             display: block;
-            width: 70%;
+            width: 80%;
             margin-bottom: 10px;
         }
 
@@ -63,11 +63,12 @@
 
         .overview-section {
             font-size: large;
-            padding-bottom: 10px;
+            padding-top: 40px;
+            padding-bottom: 60px;
         }
 
         .summary-section {
-            padding-bottom: 10x;
+            margin-bottom: 120px;
         }
 
         table {
@@ -330,13 +331,13 @@
         <table>
             <!-- Headers -->
             <tr>
-                {% for header in data.table[0].keys() %}
+                {% for header in data.table_drug[0].keys() %}
                 <th>{{ header }}</th>
                 {% endfor %}
             </tr>
 
             <!-- Data -->
-            {% for row in data.table %}
+            {% for row in data.table_drug %}
             <tr>
                 {% for _, value in row.items() %}
                 <td>{{ value }}</td>
@@ -350,13 +351,13 @@
         <table>
             <!-- Headers -->
             <tr>
-                {% for header in data.table[0].keys() %}
+                {% for header in data.table_recommendation[0].keys() %}
                 <th>{{ header }}</th>
                 {% endfor %}
             </tr>
 
             <!-- Data -->
-            {% for row in data.table %}
+            {% for row in data.table_recommendation %}
             <tr>
                 {% for _, value in row.items() %}
                 <td>{{ value }}</td>
