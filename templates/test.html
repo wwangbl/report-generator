@@ -3,93 +3,366 @@
 <head>
     <style>
         .header {
-            display: flex;
-            justify-content: space-between;
             width: 100%;
-            height: 200px; /* adjust as needed */
-        }
-        .left-part, .right-part {
             display: flex;
-            flex-direction: column;
-            width: 50%;
-            height: 100%;
+            flex-wrap: wrap;
         }
-        .left-part img, .left-part .title {
-            width: 100%;
-            height: 50%;
+
+        .logo {
+            width: 100px;
         }
-        .title {
-            font-weight: bold;
+
+        .company {
+            font-weight: 100;
             font-size: 30px;
             color: rgb(0, 38, 91);
             font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .right-part {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-content: space-between;
+
+        .left-part, .right-part {
+            width: 50%;
+            box-sizing: border-box;
         }
+
+        .left-part img {
+            display: block;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .left-part p {
+            display: block;
+            width: 100%;
+            height: 100px;
+        }
+
         .block {
-            display: flex;
-            flex-direction: column;
-            width: calc(50% - 10px); /* adjust as needed */
-            height: calc(50% - 10px); /* adjust as needed */
-            background-color: lightgray;
-            margin: 5px;
+            width: 40%;  /* Adjust the percentage as needed */
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            box-sizing: border-box;
         }
+
         .label {
             font-weight: bold;
-            color: white;
-            background-color: rgb(0, 38, 91);
+            color: black;
+            background-color: lightgray;
             font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50%;
         }
-        .content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50%;
+
+        body {
+            font-family: Georgia, serif;
+            font-size: 0.8em; /* Reduce font size for the entire body */
+        }
+
+        .overview-section {
+            font-size: 1.2em;
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+
+        .summary-section {
+            margin-bottom: 120px;
+        }
+
+        table {
+            border-collapse: collapse; 
+            width: 100%;
+            table-layout: auto;
+            font-size: 0.8em; /* Reduce font size for the table */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            word-wrap: break-word;
+            overflow: hidden;  /* Hide content that overflows */
+        }
+
+        th {
+            background-color: rgb(0, 38, 91);
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+        }
+
+        tr:nth-child(odd) {
+            background-color: lightgray;
+        }
+
+        tr td:first-child {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: rgb(0, 38, 91);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: rgb(0, 38, 91);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3 {
+            font-weight: bold;
+            color: rgb(0, 38, 91);
+            font-family: Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="left-part">
-            <img src="{{ data.logo_path }}" alt="Company Logo">
-            <div class="title">Genomic Clinical Report</div>
+            <img src="{{ data.logo_path }}" class="logo" alt="Company Logo">
+            <!-- <div class="title">QuantumLife WGS Report</div> -->
+            <div class="company">Genetic Risk Carriers Screening and Analysis Report</div>
         </div>
         <div class="right-part">
             <div class="block">
-                <div class="label">Name</div>
+                <div class="label">PATIENT NAME</div>
                 <div class="content">{{ data.name }}</div>
             </div>
             <div class="block">
-                <div class="label">Age</div>
-                <div class="content">{{ data.age }}</div>
-            </div>
-            <div class="block">
-                <div class="label">ID</div>
-                <div class="content">{{ data.id }}</div>
-            </div>
-            <div class="block">
-                <div class="label">Gender</div>
+                <div class="label">GENDER</div>
                 <div class="content">{{ data.gender }}</div>
             </div>
             <div class="block">
-                <div class="label">Date of Birth</div>
+                <div class="label">DATE OF BIRTH</div>
                 <div class="content">{{ data.dob }}</div>
             </div>
-            <!-- Add more blocks as needed -->
+            <div class="block">
+                <div class="label">SAMPLE TYPE</div>
+                <div class="content">{{ data.sample_type }}</div>
+            </div>
+            <div class="block">
+                <div class="label">COLLECTION DATE</div>
+                <div class="content">{{ data.collection_date }}</div>
+            </div>
+            <div class="block">
+                <div class="label">SAMPLE ID</div>
+                <div class="content">{{ data.id }}</div>
+            </div>
+            <div class="block">
+                <div class="label">ACCESSION #</div>
+                <div class="content">{{ data.accession }}</div>
+            </div>
+            <div class="block">
+                <div class="label">REPORT DATE</div>
+                <div class="content">{{ data.report_date }}</div>
+            </div>
         </div>
     </div>
-    <!-- main body content goes here -->
+    <div class="main-body">
+        <div class="overview-section">
+            <h1>Overview</h1>
+            <p>
+                Your genetic blueprint, steeped in your DNA, is the most critical factor in determining who you are. From the beginning 
+                of life to your golden years, it is these unique genetic variants that set you apart from your relatives and acquaintances. 
+                As you navigate through the later stages of life, an interplay of these inherent genetic traits, your lifestyle choices, 
+                and environmental factors, collectively contribute to the pace at which you age. This complex interaction also influences 
+                your susceptibility to various age-related health conditions and consequently how long you live.      
+            </p>
+            <p>
+                Here at HK Longevity Medical Centre, our expertise lies in conducting comprehensive Genetic Risk Carriers Screening and Analysis. 
+                Our principal objective is to deliver personalized genomic data that can illuminate your genetic predisposition towards 
+                hereditary health conditions and diseases and provide insights into your potential physical fitness. 
+            </p>
+            <p>
+                In our pursuit of this mission, we employ Whole Genome Sequencing (WGS), a state-of-the-art technology that deciphers an 
+                individual's DNA sequence, comprising approximately three billion base pairs. WGS grants us a panoramic view of the entire 
+                genome, enabling the detection of genetic variants that could potentially influence your health and disease susceptibility. 
+            </p>
+            <p>
+                Armed with this knowledge, you gain the power to make well-informed decisions concerning your health, lifestyle, 
+                and preventive care. Our services aim to demystify the intricate realm of genomics, forging a clear path from raw genetic 
+                information to actionable health insights. At HK Longevity Medical Centre, we are your trusted partner in navigating the complex life 
+                journey from genetic understanding to your life goal Healthy Aging and Longevity.
+            </p>
+        </div>
+        <div class="summary-section">
+            <h1>Finding Summary</h1>
+            <p>
+                This is a brief summary of the WGS screening and analysis.
+            </p>
+            <table>
+                <tr>
+                    {% for header in data.table_summary[0].keys() %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in data.table_summary %}
+                <tr>
+                    {% for _, value in row.items() %}
+                    <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <h1>Section 1: Hereditary Disease Risk</h1>
+        <p>
+            This section includes variants that, when found by themselves, are associated with high and moderate genetic risk
+            of developing a disease. Depending on a variant zygosity and disease inheritance, the disease can affect you or
+            represent a risk for the next generation (carrier variants).
+        </p>
+
+        <h2>Subsection 1.1: Variant Summary</h2>
+        <table>
+            <tr>
+                {% for header in data.table_variants[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_variants %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value.replace(' ', '<br>') }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Subsection 1.2: Variant Details</h2>
+        <h3>Variants Associated with Hereditary Cancer</h3>
+        <p>Patient was found to have a pathogenic variant associated with an increased risk for Hereditary Cancer</p>
+        <table>
+            <tr>
+                {% for header in data.table_variant_details[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_variant_details %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            The c.1564_1565delGA frameshift variant is predicted to truncate the ATM protein, resulting in a loss or
+            deficient function. The variant has been identified in a homozygous or compound heterozygous state in
+            individuals affected with ataxia-telangiectasia (PMID 9463314, PMID 10817650, PMID 9000145, PMID
+            12497634, PMID 21965147), as well as in an individual diagnosed with breast cancer (PMID 27083775).
+            The ATM gene codes for an enzyme called serine-protein kinase. This enzyme plays a key role in DNA damage
+            response by transducing checkpoint signaling, cell cycle regulation, and tumor suppression. Pathogenic ATM
+            variants result in impaired response to DNA damage, cell death, and formation of cancerous tumors and are
+            associated with autosomal dominant susceptibility to breast cancer (MIM 114480) and autosomal recessive
+            ataxia-telangiectasia (AT, MIM 208900). Women with a pathogenic ATM variant have a 5-to 9-fold increased
+            risk of breast cancer (PMID 1961222, PMID 15928302). There is also some evidence supporting an association
+            with autosomal dominant pancreatic, colorectal, prostate, and possibly other cancers (PMID 26483394, PMID
+            15928302, PMID 26662178). Ataxia-telangiectasia a childhood-onset disease characterized by progressive
+            cerebellar ataxia, neurologic degeneration, conjunctival telangiectasias, immunodeficiency and increased risk of
+            leukemia and lymphoma as well as other cancers (PMID 20301790). The worldwide prevalence of ataxiatelangiectasia 
+            is unknown, however, the estimated prevalence in the US ranges from 1 in 40,000 to 1 in 100,000
+            live births (PMID 20301790).
+        </p>
+
+        <h3>Variants Associated with Endocrine Disorder</h3>
+        <p>Patient is a carrier for a pathogenic variant associated with a Endocrine Disorder. Reproductive partner and/or first-degree
+            relatives may benefit from screening
+        </p>
+        <table>
+            <tr>
+                {% for header in data.table_variant_details[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_variant_details %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            The c.1564_1565delGA frameshift variant is predicted to truncate the ATM protein, resulting in a loss or
+            deficient function. The variant has been identified in a homozygous or compound heterozygous state in
+            individuals affected with ataxia-telangiectasia (PMID 9463314, PMID 10817650, PMID 9000145, PMID
+            12497634, PMID 21965147), as well as in an individual diagnosed with breast cancer (PMID 27083775).
+            The ATM gene codes for an enzyme called serine-protein kinase. This enzyme plays a key role in DNA damage
+            response by transducing checkpoint signaling, cell cycle regulation, and tumor suppression. Pathogenic ATM
+            variants result in impaired response to DNA damage, cell death, and formation of cancerous tumors and are
+            associated with autosomal dominant susceptibility to breast cancer (MIM 114480) and autosomal recessive
+            ataxia-telangiectasia (AT, MIM 208900). Women with a pathogenic ATM variant have a 5-to 9-fold increased
+            risk of breast cancer (PMID 1961222, PMID 15928302). There is also some evidence supporting an association
+            with autosomal dominant pancreatic, colorectal, prostate, and possibly other cancers (PMID 26483394, PMID
+            15928302, PMID 26662178). Ataxia-telangiectasia a childhood-onset disease characterized by progressive
+            cerebellar ataxia, neurologic degeneration, conjunctival telangiectasias, immunodeficiency and increased risk of
+            leukemia and lymphoma as well as other cancers (PMID 20301790). The worldwide prevalence of ataxiatelangiectasia 
+            is unknown, however, the estimated prevalence in the US ranges from 1 in 40,000 to 1 in 100,000
+            live births (PMID 20301790).
+        </p>
+
+        <h1>Section 2: Pharmacogenomic Findings</h1>
+        <table>
+            <tr>
+                {% for header in data.table_drug_summary[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data.table_drug_summary %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            The way you respond to therapeutic drugs depends on your genes as well as other factors. This analysis found all 
+            your genetic alterations (genotypes) that may have a impact on how your body processing or metabolizing drugs (phenotypes). 
+            It helps your doctor better understand your personal situation, and your doctor will take these factors into account when 
+            deciding which drug or what drug dose is the best for you. Do not stop taking or alter the dosage of any prescribed 
+            medications without consulting with your doctor beforehand. 
+        </p>
+
+        <h2>Subsection 2.1: Drugs Potentially Impacted</h2>
+        <table>
+            <!-- Headers -->
+            <tr>
+                {% for header in data.table_drug[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+
+            <!-- Data -->
+            {% for row in data.table_drug %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Subsection 2.2: Gene and Phenotype Findings</h2>
+        
+        <table>
+            <!-- Headers -->
+            <tr>
+                {% for header in data.table_recommendation[0].keys() %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+
+            <!-- Data -->
+            {% for row in data.table_recommendation %}
+            <tr>
+                {% for _, value in row.items() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
