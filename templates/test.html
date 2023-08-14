@@ -246,84 +246,39 @@
             {% for row in data.table_variants %}
             <tr>
                 {% for _, value in row.items() %}
-                <td>{{ value.replace(' ', '<br>') }}</td>
+                <td>{{ value }}</td>
                 {% endfor %}
             </tr>
             {% endfor %}
         </table>
 
         <h2>Subsection 1.2: Variant Details</h2>
-        <h3>Variants Associated with Hereditary Cancer</h3>
-        <p>Patient was found to have a pathogenic variant associated with an increased risk for Hereditary Cancer</p>
-        <table>
-            <tr>
-                {% for header in data.table_variant_details[0].keys() %}
-                <th>{{ header }}</th>
-                {% endfor %}
-            </tr>
-            {% for row in data.table_variant_details %}
-            <tr>
-                {% for _, value in row.items() %}
-                <td>{{ value }}</td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-        <p>
-            The c.1564_1565delGA frameshift variant is predicted to truncate the ATM protein, resulting in a loss or
-            deficient function. The variant has been identified in a homozygous or compound heterozygous state in
-            individuals affected with ataxia-telangiectasia (PMID 9463314, PMID 10817650, PMID 9000145, PMID
-            12497634, PMID 21965147), as well as in an individual diagnosed with breast cancer (PMID 27083775).
-            The ATM gene codes for an enzyme called serine-protein kinase. This enzyme plays a key role in DNA damage
-            response by transducing checkpoint signaling, cell cycle regulation, and tumor suppression. Pathogenic ATM
-            variants result in impaired response to DNA damage, cell death, and formation of cancerous tumors and are
-            associated with autosomal dominant susceptibility to breast cancer (MIM 114480) and autosomal recessive
-            ataxia-telangiectasia (AT, MIM 208900). Women with a pathogenic ATM variant have a 5-to 9-fold increased
-            risk of breast cancer (PMID 1961222, PMID 15928302). There is also some evidence supporting an association
-            with autosomal dominant pancreatic, colorectal, prostate, and possibly other cancers (PMID 26483394, PMID
-            15928302, PMID 26662178). Ataxia-telangiectasia a childhood-onset disease characterized by progressive
-            cerebellar ataxia, neurologic degeneration, conjunctival telangiectasias, immunodeficiency and increased risk of
-            leukemia and lymphoma as well as other cancers (PMID 20301790). The worldwide prevalence of ataxiatelangiectasia 
-            is unknown, however, the estimated prevalence in the US ranges from 1 in 40,000 to 1 in 100,000
-            live births (PMID 20301790).
-        </p>
 
-        <h3>Variants Associated with Endocrine Disorder</h3>
-        <p>Patient is a carrier for a pathogenic variant associated with a Endocrine Disorder. Reproductive partner and/or first-degree
-            relatives may benefit from screening
-        </p>
-        <table>
-            <tr>
-                {% for header in data.table_variant_details[0].keys() %}
-                <th>{{ header }}</th>
-                {% endfor %}
-            </tr>
-            {% for row in data.table_variant_details %}
-            <tr>
-                {% for _, value in row.items() %}
-                <td>{{ value }}</td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-        <p>
-            The c.1564_1565delGA frameshift variant is predicted to truncate the ATM protein, resulting in a loss or
-            deficient function. The variant has been identified in a homozygous or compound heterozygous state in
-            individuals affected with ataxia-telangiectasia (PMID 9463314, PMID 10817650, PMID 9000145, PMID
-            12497634, PMID 21965147), as well as in an individual diagnosed with breast cancer (PMID 27083775).
-            The ATM gene codes for an enzyme called serine-protein kinase. This enzyme plays a key role in DNA damage
-            response by transducing checkpoint signaling, cell cycle regulation, and tumor suppression. Pathogenic ATM
-            variants result in impaired response to DNA damage, cell death, and formation of cancerous tumors and are
-            associated with autosomal dominant susceptibility to breast cancer (MIM 114480) and autosomal recessive
-            ataxia-telangiectasia (AT, MIM 208900). Women with a pathogenic ATM variant have a 5-to 9-fold increased
-            risk of breast cancer (PMID 1961222, PMID 15928302). There is also some evidence supporting an association
-            with autosomal dominant pancreatic, colorectal, prostate, and possibly other cancers (PMID 26483394, PMID
-            15928302, PMID 26662178). Ataxia-telangiectasia a childhood-onset disease characterized by progressive
-            cerebellar ataxia, neurologic degeneration, conjunctival telangiectasias, immunodeficiency and increased risk of
-            leukemia and lymphoma as well as other cancers (PMID 20301790). The worldwide prevalence of ataxiatelangiectasia 
-            is unknown, however, the estimated prevalence in the US ranges from 1 in 40,000 to 1 in 100,000
-            live births (PMID 20301790).
-        </p>
+        {% for row in data.table_var_details %}
+        <div>
+            <p style="font-weight: bold; color: rgb(0, 38, 91); margin-top: 30px;">
+                Variant detected
+            </p>
+            <table>
+                <tr>
+                    {% for header in data.columns %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for header in data.columns %}
+                    <td>{{ row[header] }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+            <p style="font-weight: bold; color: rgb(0, 38, 91);">
+                Detailed interpretation
+            </p>
+            <p style="margin-bottom: 20px;">{{ row[data.last_column] }}</p> <!-- The last column as paragraph -->
+        </div>
+        {% endfor %}
+
+
 
         <h1>Section 2: Pharmacogenomic Findings</h1>
         <table>
@@ -348,7 +303,7 @@
             medications without consulting with your doctor beforehand. 
         </p>
 
-        <h2>Subsection 2.1: Drugs Potentially Impacted</h2>
+        <h2>Subsection 2.1: Gene and Phenotype Findings</h2>
         <table>
             <!-- Headers -->
             <tr>
@@ -367,7 +322,7 @@
             {% endfor %}
         </table>
 
-        <h2>Subsection 2.2: Gene and Phenotype Findings</h2>
+        <h2>Subsection 2.2: Drugs Potentially Impacted</h2>
         
         <table>
             <!-- Headers -->

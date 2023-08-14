@@ -21,18 +21,25 @@ def create_pdf(data, template_path="test.html", output="report.pdf"):
 # Read the CSV data
 tb_summary = pd.read_csv('data/summary.csv')
 tb_variants = pd.read_csv('data/variants.csv')
-tb_variant_details = pd.read_csv('data/variant_details.csv')
 tb_drug_summary = pd.read_csv('data/drug_summary.csv')
 tb_drug = pd.read_csv('data/drug.csv')
 tb_recommendation = pd.read_csv('data/recommendation.csv')
+tb_var_details = pd.read_csv('data/var_details.csv')
+
+# Get the column names
+columns = tb_var_details.columns.tolist()
+# Get the last column name
+last_col = columns[-1]
+# Remove the last column name from the list
+columns.remove(last_col)
 
 # Convert the DataFrame into a list of dictionaries
 table_summary = tb_summary.to_dict('records')
 table_variants = tb_variants.to_dict('records')
-table_variant_details = tb_variant_details.to_dict('records')
 table_drug_summary = tb_drug_summary.to_dict('records')
 table_drug = tb_drug.to_dict('records')
 table_recommendation = tb_recommendation.to_dict('records')
+table_var_details = tb_var_details.to_dict('records')
 
 name = "John Doe"
 gender = "Male"
@@ -58,10 +65,12 @@ data = {
     "logo_path": "file:///" + logo_path.replace("\\", "/"),
     "table_summary": table_summary,
     "table_variants": table_variants,
-    "table_variant_details": table_variant_details,
     "table_drug_summary": table_drug_summary,
     "table_drug": table_drug,
     "table_recommendation": table_recommendation,
+    "table_var_details": table_var_details,
+    "last_column": last_col,
+    "columns": columns,
 }
 
 create_pdf(data)

@@ -1,6 +1,42 @@
-﻿HEALTH CATEGORY,GENE,VARIANT,ZYGOSITY,CLASSIFICATION,DISEASE ASSOCIATED,INHERITANCE
-Hereditary Cancer,ATM,rsxxxxxx c.1564_1565delGA (p.Glu522fs) NM_000051.3,Heterozygous,Pathogenic,Breast cancer,Autosomal dominant
-xxxxxx,xxxxx,xxxxx,xxxxxx,xxxxxx,xxxxxx,xxxxx
-xxxxxx,xxxxx,xxxxx,xxxxxx,xxxxxx,xxxxxx,xxxxx
-xxxxxx,xxxxx,xxxxx,xxxxxx,xxxxxx,xxxxxx,xxxxx
-xxxxxx,xxxxx,xxxxx,xxxxxx,xxxxxx,xxxxxx,xxxxx
+﻿Gene,Variant,Zygosity,Classification,Disease associated,Inheritance
+APC,rs2229992 ENST00000257430.9 c.1458T>C (p.Tyr486=) ,homozygous,Benign,familial adenomatous polyposis 1,Autosomal dominant inheritance
+APC,rs351771 ENST00000257430.9 c.1635G>A (p.Ala545=) ,homozygous,Benign,familial adenomatous polyposis 1,Autosomal dominant inheritance
+APC,rs459552 ENST00000257430.9 c.5465T>A (p.Val1822Asp) ,homozygous,Benign,familial adenomatous polyposis 1,Autosomal dominant inheritance
+BRAF,rs9648696 ENST00000644969.1 c.2049A>G (p.Gly683=) ,heterozygous,Benign,RASopathy,Autosomal dominant inheritance
+PTEN,rs11202592 ENST00000371953.8 c.-9C>G () ,heterozygous,Benign,PTEN hamartoma tumor syndrome,Autosomal dominant inheritance
+TECTA,rs612969 ENST00000264037.2 c.1111A>G (p.Arg371Gly) ,heterozygous,Benign,nonsyndromic genetic deafness,
+KRAS,rs1137282 ENST00000256078.9 c.*73T>C () ,heterozygous,Benign,RASopathy,Autosomal dominant inheritance
+PAH,rs772897 ENST00000553106.6 c.1155C>G (p.Leu385=) ,heterozygous,Benign,phenylketonuria,Autosomal recessive inheritance
+PAH,rs12580432 ENST00000553106.6 c.1065+97G>A () ,heterozygous,Benign,phenylketonuria,Autosomal recessive inheritance
+PAH,rs1042503 ENST00000553106.6 c.735G>A (p.Val245=) ,heterozygous,Benign,phenylketonuria,Autosomal recessive inheritance
+PAH,rs10860933 ENST00000553106.6 c.509+101A>C () ,heterozygous,Benign,phenylketonuria,Autosomal recessive inheritance
+PAH,rs2037639 ENST00000553106.6 c.353-22C>T () ,heterozygous,Benign,phenylketonuria,Autosomal recessive inheritance
+PAH,rs1522296 ENST00000553106.6 c.60+62C>T () ,heterozygous,Benign,phenylketonuria,Autosomal recessive inheritance
+PAH,rs2280615 ENST00000553106.6 c.-71A>C () ,heterozygous,Benign,phenylketonuria,Autosomal recessive inheritance
+HNF1A,rs1169305 ENST00000257555.10 c.1720A>G (p.Ser574Gly) ,homozygous,Benign,monogenic diabetes,Autosomal dominant inheritance
+MYH7,rs7157716 ENST00000355349.4 c.2967T>C (p.Ile989=) ,heterozygous,Benign,cardiomyopathy,Autosomal dominant inheritance
+MYH7,rs2069540 ENST00000355349.4 c.189C>T (p.Thr63=) ,heterozygous,Benign,cardiomyopathy,Autosomal dominant inheritance
+GATM,rs1049518 ENST00000396659.8 c.*940C>T () ,homozygous,Benign,AGAT deficiency,Autosomal recessive inheritance
+GATM,rs1049503 ENST00000396659.8 c.*600A>G () ,homozygous,Benign,AGAT deficiency,Autosomal recessive inheritance
+GATM,rs1145086 ENST00000396659.8 c.1252T>C (p.Leu418=) ,homozygous,Benign,AGAT deficiency,Autosomal recessive inheritance
+POLG,rs3176174 ENST00000268124.10 c.1250+188A>G () ,heterozygous,Benign,mitochondrial disease,Autosomal recessive inheritance
+PALB2,rs183489969 ENST00000261584.9 c.3054G>C (p.Glu1018Asp) ,heterozygous,Benign,hereditary breast cancer,Autosomal dominant inheritance
+CDH1,rs3743674 ENST00000261769.10 c.48+6C>T () ,heterozygous,Benign,hereditary diffuse gastric cancer,Autosomal dominant inheritance
+CDH1,rs1801552 ENST00000261769.10 c.2076T>C (p.Ala692=) ,homozygous,Benign,hereditary diffuse gastric cancer,Autosomal dominant inheritance
+CDH1,rs33964119 ENST00000261769.10 c.2253C>T (p.Asn751=) ,homozygous,Benign,hereditary diffuse gastric cancer,Autosomal dominant inheritance
+CDH1,rs1801026 ENST00000261769.10 c.*54C>T () ,homozygous,Benign,hereditary diffuse gastric cancer,Autosomal dominant inheritance
+CDH1,rs13689 ENST00000261769.10 c.*1120T>C () ,heterozygous,Benign,hereditary diffuse gastric cancer,Autosomal dominant inheritance
+ACADVL,rs370388543 ENST00000356839.10 c.478-106del () ,heterozygous,Benign,very long chain acyl-CoA dehydrogenase deficiency,Autosomal recessive inheritance
+MYO15A,rs854777 ENST00000647165.2 c.5929T>C (p.Cys1977Arg) ,homozygous,Benign,nonsyndromic genetic deafness,Autosomal recessive inheritance
+ITGB3,rs15908 ENST00000559488.6 c.1143A>C (p.Val381=) ,heterozygous,Benign,Glanzmann's thrombasthenia,Autosomal recessive inheritance
+ITGB3,rs4634 ENST00000559488.6 c.1545G>A (p.Arg515=) ,heterozygous,Benign,Glanzmann thrombasthenia,Autosomal recessive inheritance
+GAA,rs1800300 ENST00000302262.8 c.324T>C (p.Cys108=) ,homozygous,Benign,glycogen storage disease II,Autosomal recessive inheritance
+GAA,rs3816256 ENST00000302262.8 c.547-4C>G () ,homozygous,Benign,glycogen storage disease II,Autosomal recessive inheritance
+GAA,rs1042395 ENST00000302262.8 c.668G>A (p.Arg223His) ,homozygous,Benign,glycogen storage disease II,Autosomal recessive inheritance
+GAA,rs1800304 ENST00000302262.8 c.1203G>A (p.Gln401=) ,homozygous,Benign,glycogen storage disease II,Autosomal recessive inheritance
+GAA,rs1126690 ENST00000302262.8 c.2338G>A (p.Val780Ile) ,homozygous,Benign,glycogen storage disease II,Autosomal recessive inheritance
+GAA,rs1042397 ENST00000302262.8 c.2553G>A (p.Gly851=) ,homozygous,Benign,glycogen storage disease II,Autosomal recessive inheritance
+MAP2K2,rs10250 ENST00000262948.9 c.660C>A (p.Ile220=) ,homozygous,Benign,RASopathy,Autosomal dominant inheritance
+ETHE1,rs3810381 ENST00000292147.7 c.6G>A (p.Ala2=) ,heterozygous,Benign,ethylmalonic encephalopathy,Autosomal recessive inheritance
+RUNX1,rs73900787 ENST00000300305.7 c.58+265G>A () ,heterozygous,Benign,hereditary thrombocytopenia and hematologic cancer predisposition syndrome,Autosomal dominant inheritance
+PDHA1,rs2229137 ENST00000422285.7 c.844A>C (p.Met282Leu) ,heterozygous,Benign,pyruvate dehydrogenase deficiency,X-linked inheritance
