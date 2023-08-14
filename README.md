@@ -12,21 +12,10 @@ This application is designed to generate clinical reports in PDF format. The rep
 pip install -r requirements.txt
 ```
 
-You also need to install wkhtmltopdf which is an open source tool that pdfkit uses under the hood:
-
-For Ubuntu/Debian: 
-```bash
-sudo apt-get install wkhtmltopdf
-```
-For Windows and other systems, download a packaged installer at wkhtmltopdf's downloads page: https://wkhtmltopdf.org/downloads.html, add the folder with wkhtmltopdf binary to your system's PATH.
-
 Usage:
 ```bash
 python main.py
 ```
-
-
-
 
 ---
 
@@ -85,3 +74,4 @@ This program depends on WeasyPrint, which in turn depends on GTK. This section e
 ---
 
 https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows
+    
