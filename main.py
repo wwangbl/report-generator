@@ -19,12 +19,12 @@ def create_pdf(data, template_path="template.html", output="report.pdf"):
     webbrowser.open_new_tab(output)
 
 # Read the CSV data
-tb_summary = pd.read_csv('data/summary.csv')
-tb_variants = pd.read_csv('data/variants.csv')
-tb_drug_summary = pd.read_csv('data/drug_summary.csv')
-tb_drug = pd.read_csv('data/drug.csv')
-tb_recommendation = pd.read_csv('data/recommendation.csv')
-tb_var_details = pd.read_csv('data/var_details.csv')
+tb_summary = pd.read_csv('data/summary.csv').fillna('NA')
+tb_variants = pd.read_csv('data/variants.csv').fillna('NA')
+tb_drug_summary = pd.read_csv('data/drug_summary.csv').fillna('NA')
+tb_drug = pd.read_csv('data/drug.csv').fillna('NA')
+tb_recommendation = pd.read_csv('data/recommendation.csv').fillna('NA')
+tb_var_details = pd.read_csv('data/var_details.csv').fillna('NA')
 
 # Get the column names
 columns = tb_var_details.columns.tolist()
