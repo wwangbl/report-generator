@@ -50,6 +50,11 @@ collection_date = "01/01/2023"
 accession = "4316546"
 report_date = "07/08/2023"
 
+# name = input("Enter name: ") or "John Doe"
+# id = input("Enter ID: ") or "A123456"
+# gender = input("Enter gender: ") or "Male"
+# dob = input("Enter date-of-birth: ") or "01/11/1990"
+
 logo_path = os.path.abspath("src/img/logo.png")
 
 # Data from your .csv, .json, .txt, etc.
