@@ -41,19 +41,21 @@ table_drug = tb_drug.to_dict('records')
 table_recommendation = tb_recommendation.to_dict('records')
 table_var_details = tb_var_details.to_dict('records')
 
-name = "John Doe"
-gender = "Male"
-dob = "01/11/1990"
+# name = "John Doe"
+# id = "A123456"
+# gender = "Male"
+# dob = "01/11/1990"
+
+name = input("Enter name: ") or "John Doe"
+id = input("Enter ID: ") or "A123456"
+gender = input("Enter gender: ") or "Male"
+dob = input("Enter date-of-birth: ") or "01/11/1990"
+
 sample_type = "Whole Blood"
-id = "A123456"
 collection_date = "01/01/2023"
 accession = "4316546"
 report_date = "07/08/2023"
 
-# name = input("Enter name: ") or "John Doe"
-# id = input("Enter ID: ") or "A123456"
-# gender = input("Enter gender: ") or "Male"
-# dob = input("Enter date-of-birth: ") or "01/11/1990"
 
 logo_path = os.path.abspath("src/img/logo.png")
 
