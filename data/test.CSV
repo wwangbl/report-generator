@@ -1,0 +1,6 @@
+﻿Assessed item,Gene,rsID,Effective  allele,Your test result,Interpretation
+Freckle growth risk,BNC2,rs2153271,T,C/C,"No risk copy, unlikely to develop freckles"
+,IRF4,rs12203592,T,C/C,"No risk copy, unlikely to develop freckles"
+Baldness risk,LINC01432,rs1160312,A,G/G,No risk copy of male-pattern baldness.
+(Male only),HDAC9,rs2073963,G,T/G,Carrying one risk copy of male-pattern baldness
+,"EDA2R, AR",rs6625163,A,A/A,Carrying two risk copies of male-pattern baldness
